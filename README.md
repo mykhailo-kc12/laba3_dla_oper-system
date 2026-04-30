@@ -53,3 +53,16 @@ flake8 src
 
 Студент КС-12
 ПІБ: Заваляэв Михайло Андрiйович
+
+
+## Ручне тестування
+
+Для перевірки роботи утиліт можна виконати такі команди:
+
+```bash
+python3 src/dir_tool.py
+python3 src/dir_tool.py -l
+python3 src/dir_tool.py -a
+python3 src/clean_tool.py --files
+python3 src/clean_tool.py --dirs
+
