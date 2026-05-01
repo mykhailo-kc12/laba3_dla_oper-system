@@ -65,8 +65,12 @@ def find_empty_files(root_path):
         for file_name in files:
             full_path = os.path.join(current_root, file_name)
 
-            # Перевіряємо, що це звичайний файл і він має розмір 0 байт.
-            if os.path.isfile(full_path) and os.path.getsize(full_path) == 0:
+            # Перевіряємо, що це звичайний файл
+            # і він має розмір 0 байт.
+            if (
+                os.path.isfile(full_path) and
+                os.path.getsize(full_path) == 0
+            ):
                 empty_files.append(full_path)
 
     return empty_files
@@ -82,7 +86,8 @@ def find_empty_dirs(root_path):
     empty_dirs = []
 
     for current_root, dirs, files in os.walk(root_path, topdown=False):
-        # Каталог вважаємо порожнім, якщо в ньому немає ні файлів, ні каталогів.
+        # Каталог вважаємо порожнім,
+        # якщо в ньому немає ні файлів, ні каталогів.
         if not dirs and not files:
             empty_dirs.append(current_root)
 
